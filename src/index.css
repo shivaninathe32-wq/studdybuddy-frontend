@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 255 255 255;
+  --surface-muted: 248 247 255;
+  --surface-elevated: 255 255 255;
+  --ink: 15 23 42;
+  --ink-muted: 71 85 105;
+  --ink-subtle: 148 163 184;
+  --border: 226 232 240;
+  --ring: 99 102 241;
+}
+
+.dark {
+  --surface: 15 17 26;
+  --surface-muted: 22 25 38;
+  --surface-elevated: 30 34 52;
+  --ink: 241 245 249;
+  --ink-muted: 148 163 184;
+  --ink-subtle: 100 116 139;
+  --border: 51 65 85;
+  --ring: 129 140 248;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply antialiased scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface-muted text-ink font-sans min-h-screen;
+    background-image: theme('backgroundImage.page-glow');
+    background-attachment: fixed;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
